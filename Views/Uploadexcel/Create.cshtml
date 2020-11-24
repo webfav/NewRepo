@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data" asp-controller="Uploadexcel" asp-action="Create">
+            <div class="form-group">
+                <label> Select File </label>
+                <input class="form-control" name="files" multiple="multiple" type="file" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" value="Submit" />
+            </div>
+            <p>
+                <div>
+                    <a class="btn btn-success" asp-area="" asp-controller="Uploadexcel" asp-action="ListBlobs">See a list of all the blobs - click here</a>
+                </div>
+            </p>
+        </form>
+    </div>
+</div>

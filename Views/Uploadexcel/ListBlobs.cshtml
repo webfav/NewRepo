@@ -1,0 +1,36 @@
+﻿@model IEnumerable<UploadExcelfileApp.Models.FileData>
+
+@{
+    ViewData["Title"] = "ListBlobs";
+}
+
+<h1>ListBlobs</h1>
+
+<p>
+    <a asp-action="Create">Upload new file - click here</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>FileName</th>
+            <th>FileSize</th>
+            <th>ModifiedOn</th>
+            <th>Download</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>@data.FileName</td>
+                <td>@data.FileSize</td>
+                <td>@data.ModifiedOn</td>
+                <td> <a href="/Uploadexcel/Download?blobName=@data.FileName">Download</a> </td>
+                <td> <a href="/Uploadexcel/Delete?blobName=@data.FileName">Delete</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
